@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const Form = ({ todos, setTodos }) => {
+const Form = ({ addTodo }) => {
   const [value, setValue] = useState("");
 
   const handleSubmit = (event) => {
@@ -10,7 +10,7 @@ const Form = ({ todos, setTodos }) => {
       alert("文字を入力してください");
       return;
     }
-    setTodos([...todos, { content: value }]);
+    addTodo(value);
     setValue("");
   };
 
